@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
           
-      - name: run test
+      - name: Run Test
         id: runtest
         uses: bo-wang/RunTest-Action@test
         with:
