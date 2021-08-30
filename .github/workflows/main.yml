@@ -14,7 +14,7 @@ jobs:
           
       - name: Run Test
         id: runtest
-        uses: bo-wang/RunTest-Action@test
+        uses: ./
         with:
           tag: "Localization"
       - run: "echo token: ${{ steps.runtest.outputs.results-path }}"

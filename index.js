@@ -1,4 +1,5 @@
 const core = require('@actions/core');
+const github = require('@actions/github');
 const { runTest } = require('./lib/run-test');
 
 (async function () {
@@ -11,6 +12,8 @@ const { runTest } = require('./lib/run-test');
     });
 
     core.setOutput("results-path", resultsPath);
+    const payload = JSON.stringify(github.context.payload, undefined, 2)
+    console.log(`The event payload: ${payload}`);
   } catch (error) {
     core.setFailed(error.message);
   }
