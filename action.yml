@@ -1,0 +1,13 @@
+name: 'Run Test'
+description: 'Run Test by Test Orchestrtor Api'
+inputs:
+  tag:
+    description: 'Tag to run test'
+    required: true
+    default: 'Localization'
+outputs:
+  results-path: 
+    description: 'The path of test results'
+runs:
+  using: 'node12'
+  main: 'index.js'

@@ -1,0 +1,24 @@
+{
+  "name": "runtests-action",
+  "version": "1.0.0",
+  "description": "_The example below is meant to be a reference more than a prescriptive template.\r The end goal is that README files always present the information here presented in some capacity._",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albumprinter/RunTests-Action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albumprinter/RunTests-Action/issues"
+  },
+  "homepage": "https://github.com/albumprinter/RunTests-Action#readme",
+  "dependencies": {
+    "@actions/core": "^1.5.0",
+    "@actions/github": "^5.0.0"
+  }
+}
