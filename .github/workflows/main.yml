@@ -11,26 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Call auth token endpoint
-        id: callauthtoken
-        uses: CamiloGarciaLaRotta/watermelon-http-client@v1
-        with:
-          url: 'https://t-dtap.login.albelli.com/v2/connect/token'
-          method: post
-          data: 'grant_type=client_credentials&client_id=daed2384fa424d939c8061629b07286a&client_secret=UUt1T112THhyVkxhMWcyckJlZnw&scope=integrationtest.write%20integrationtest.read%20testreports.read'
-          headers: '{"Content-Type": "application/x-www-form-urlencoded"}'
-      - run: echo ${{ steps.callauthtoken.outputs.response }}
-        shell: bash
-      - name: Get token
-        id: gettoken
-        uses: gr2m/get-json-paths-action@v1.x
-        with: 
-          json: ${{ steps.callauthtoken.outputs.response }}
-          token: "access_token"
-          tokentype: "token_type"
-      - run: "echo token: ${{ steps.gettoken.outputs.token }} ${{ steps.gettoken.outputs.tokentype }}"
-      
+          
       - name: run test
         id: runtest
         uses: ./ # Uses an action in the root directory
